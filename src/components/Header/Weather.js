@@ -1,27 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API = "http://api.weatherstack.com/current";
-
 const params = {
   access_key: process.env.REACT_APP_WEATHER_API,
   query: "Helsinki",
 };
 
 const Weather = () => {
-  const [weather, setweather] = useState({});
-  const [isLoading, setisLoading] = useState(false);
+  const [weather, setWeather] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(API, { params }).then((resp) => setweather(resp.data));
+    setIsLoading(true);
+    const getData = async () => {
+      const res = await axios(
+        `http://api.openweathermap.org/data/2.5/weather?q=${params.query}&units=metric&appid=${params.access_key}`
+      );
+      setWeather(res.data);
+      setIsLoading(false);
+    };
+    getData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div>
+        <p>Wait, I am loading</p>
+      </div>
+    );
+  }
 
   return (
     <div>
       <p>
-        {""} Weather will be here
-        {/* Currently, in {weather.location.name} is {weather.current.temperature}{" "}
-        degrees, it feels like {weather.current.feelslike} */}
+        Currently, in {weather.name} is {Math.round(weather.main.temp)} degrees
+        and it feels like {Math.round(weather.main.feels_like)}
       </p>
     </div>
   );

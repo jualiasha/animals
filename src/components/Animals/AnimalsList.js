@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+
 import AnimalCard from "./AnimalCard";
 
-const AnimalsList = () => {
-  const [animals, setAnimals] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3002/animals")
-      .then((res) => setAnimals(res.data));
-  }, []);
-
+const AnimalsList = ({ animals }) => {
   return (
     <div className="list">
       {animals.map((animal) => (
@@ -20,7 +12,7 @@ const AnimalsList = () => {
           aclass={animal.aclass}
           description={animal.desc}
           img={animal.img}
-          link={animal.link}
+          link={animal.id}
         />
       ))}
     </div>

@@ -41,6 +41,26 @@
       "class": "Mammals",
       "more": "https://en.wikipedia.org/wiki/Swallow",
       "id": 5
+    },
+    {
+      "name": "Julia",
+      "aclass": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg/440px-Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg\"",
+      "desc": "gfgfgfg",
+      "link": "",
+      "class": "Mammals",
+      "more": "https://en.wikipedia.org/wiki/Swallow",
+      "id": 6
+    },
+    {
+      "name": "Stories",
+      "aclass": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg/440px-Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg\"",
+      "desc": "jklkj",
+      "link": "",
+      "class": "Mammals",
+      "more": "https://en.wikipedia.org/wiki/Swallow",
+      "id": 7
     }
   ]
 }
